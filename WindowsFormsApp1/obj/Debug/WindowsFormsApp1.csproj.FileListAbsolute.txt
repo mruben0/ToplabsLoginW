@@ -7,3 +7,13 @@ c:\users\karo\documents\visual studio 2017\Projects\WindowsFormsApp1\WindowsForm
 c:\users\karo\documents\visual studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 c:\users\karo\documents\visual studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\Karo\documents\visual studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pass.resources
+C:\Users\mrube\Repos\ToplabsLoginW\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\mrube\Repos\ToplabsLoginW\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\mrube\Repos\ToplabsLoginW\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\mrube\Repos\ToplabsLoginW\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+C:\Users\mrube\Repos\ToplabsLoginW\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pass.resources
+C:\Users\mrube\Repos\ToplabsLoginW\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\mrube\Repos\ToplabsLoginW\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+C:\Users\mrube\Repos\ToplabsLoginW\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\mrube\Repos\ToplabsLoginW\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\mrube\Repos\ToplabsLoginW\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources

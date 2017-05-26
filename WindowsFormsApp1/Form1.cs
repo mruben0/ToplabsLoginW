@@ -7,48 +7,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
     public partial class pass : Form
     {
+        UserService userservice = new UserService();
+        
       
-        public class NUser
-        {
-            public string name { get; set; }
-            public string pass { get; set; }
-            public NUser(string nm, string ps)
-            {
-                name = nm;
-                pass = ps;
-            }
-        }
-        NUser gago = new NUser("gag", "11");
-        NUser samo = new NUser("sam", "22");
-        NUser mukuch = new NUser("mukuch", "33");
-        NUser hihi = new NUser("Hi", "ha");
-
-        List<NUser> userL = new List<NUser>();
-        public List<NUser> test()
-        {
-            userL.Add(gago);
-            return userL;
-        }
+        public string List;
        
+
+        //NUser gago = new NUser("gag", "11");
+        //NUser samo = new NUser("sam", "22");
+        //NUser mukuch = new NUser("mukuch", "33");
+        //NUser hihi = new NUser("Hi", "ha");
+
+        //List<NUser> userL = new List<NUser>();
+        //public List<NUser> test()
+        //{
+        //    userL.Add(gago);
+        //    return userL;
+        //}
+
 
         public pass()
         {
             InitializeComponent();
-
-           List<NUser> test()
-            {
-                this.userL.Add(gago);
-                this.userL.Add(samo);
-                this.userL.Add(mukuch);
-                this.userL.Add(hihi);
-                return userL;
-            }
-            test();
+            
+           
+            //List<NUser> test()
+            // {
+            //     this.userL.Add(gago);
+            //     this.userL.Add(samo);
+            //     this.userL.Add(mukuch);
+            //     this.userL.Add(hihi);
+            //     return userL;
+            // }
+            // test();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -67,20 +64,21 @@ namespace WindowsFormsApp1
             string userName = login.Text;
             string password = passBox.Text;
             bool check = checkBox1.Checked;
-            bool userOk = false;
+                 
             if (check)
             {
-            
-                foreach (NUser user in userL)
-                {
-                    if (user.name == userName && user.pass == password)
-                    {
-                        userOk = true;                        
-                      break;
-                    }
 
-                }
-                if (userOk == true)
+                //foreach (NUser user in userL)
+                //{
+                //    if (user.Username == userName && user.Pass == password)
+                //    {
+                //        userOk = true;                        
+                //      break;
+                //    }
+
+                //}
+                userservice.userCheck(userName, password);
+                if (userservice.Bool == true)
                 {
                     label2.Text = "successfully logged in, " + userName;
                     MessageBox.Show("successfully logged in, " + userName);
@@ -137,20 +135,55 @@ namespace WindowsFormsApp1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-         
-       
-            string H = " ";
-            
-            foreach (NUser user in userL)
+
+
+            //string H = " ";
+
+            //foreach (NUser user in userL)
+            //{
+
+            //    H += " name: " + user.Username + " passw: " + user.Pass +  " //" ;
+            //    if (userL.IndexOf(user) == userL.Count )
+            //    break;
+            //}
+            if (File.Exists("userList.toplabs"))
             {
-            
-                H += " name: " + user.name + " passw: " + user.pass +  " //" ;
-                if (userL.IndexOf(user) == userL.Count )
-                break;
+                string[] s = File.ReadAllLines("userList.toplabs");
+                String[] pattern = new String[] { "^^toplabs^^" };
+                foreach (string line in s)
+                {
+                    string[] r = line.Split(pattern, StringSplitOptions.None);
+                    string name = r[0];
+                    string username = r[1];
+                    string password = r[2];
+                    List += "name: " + name + " / " + "username: " + username + " / " + "password: " + password + Environment.NewLine;
+                }
             }
-            MessageBox.Show(H);
+            else List = "there are no users";
+            MessageBox.Show(List);
+            List = "";
 
             }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 reg = new Form2();
+            reg.Show();
         }
+
+        private void pass_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("userList.toplabs"))
+            {
+                File.Delete("userList.toplabs");
+            }
+            else MessageBox.Show("there are no users");
+        }
+    }
     }
 
